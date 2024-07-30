@@ -207,10 +207,10 @@ public class MusicControlModule extends ReactContextBaseJavaModule implements Co
         receiver = new MusicControlReceiver(this, context);
         // context.registerReceiver(receiver, filter);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-            context.registerReceiver(myReceiver, filter, null, null,
+            context.registerReceiver(receiver, filter, null, null,
                     Context.RECEIVER_EXPORTED);
         } else {
-            context.registerReceiver(myReceiver, filter);
+            context.registerReceiver(receiver, filter);
         }
 
         Intent myIntent = new Intent(context, MusicControlNotification.NotificationService.class);
